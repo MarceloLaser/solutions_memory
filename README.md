@@ -54,6 +54,7 @@ Another option is to add the following before your dependencies:
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   <maven.compiler.source>1.8</maven.compiler.source>
   <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
 ```
 
 You should add this anyway so maven quits whining about warnings. I don't know why the archetype generator doesn't just add it automatically, and I'm afraid to ask.
