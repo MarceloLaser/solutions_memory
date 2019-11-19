@@ -59,6 +59,22 @@ Another option is to add the following before your dependencies:
 
 You should add this anyway so maven quits whining about warnings. I don't know why the archetype generator doesn't just add it automatically, and I'm afraid to ask.
 
+## Linking plugins to phases
+
+To run a plugin automatically during a particular phase, add this to it at the end. GOAL depends on the plugin, each plugin has a number of goals.
+
+```
+<executions>
+  <execution>
+    <id>make-assembly</id>
+    <phase>package</phase>
+    <goals>
+      <goal>GOAL</goal>
+    </goals>
+  </execution>
+</executions>
+```
+
 ## Jar with dependencies
 
 Because there are 317 different assembly plugins, if you search how to make a jar with dependencies you'll get some 318 different answers. This is how I've been doing it, and it works okay. This will make sure that the .jar output will contain all of the necessary dependencies (will be a "fat jar").
@@ -94,6 +110,7 @@ This one is a nightmare. Google how to use a local library and at least 60% of t
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-install-plugin</artifactId>
+  <version>3.0.0-M1</version>
   <executions>
     <execution>
       <id>hack-binary</id>
@@ -200,5 +217,15 @@ guava: It's guava. Has a bunch of stuff. I used it for the iterators.
   <groupId>com.google.guava</groupId>
   <artifactId>guava</artifactId>
   <version>19.0</version>
+</dependency>
+```
+
+Apache Commons IO: Neat for file handling.
+
+```
+<dependency>
+  <groupId>commons-io</groupId>
+  <artifactId>commons-io</artifactId>
+  <version>2.6</version>
 </dependency>
 ```
