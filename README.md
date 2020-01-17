@@ -2,6 +2,27 @@
 
 You found my notes. Congratulations. If you'd like to give me suggestions on how to improve the snippets, I'd love that. If my snippets are wrong, let me know, it's been a while since I wrote some of these. If you don't like my tone, do kindly keep it to yourself.
 
+# Git
+
+A few helpful tidbits for dealing with Git, since Git is quite the git.
+
+## Lola
+
+This is a helpful command for visualizing the commit history of your repository. To exit lola, press q. Taken from http://blog.kfish.org/2010/04/git-lola.html, which itself has all the information you need, but for reference, copy this into gitconfig and be happy:
+
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+
+## Removing file from history
+
+I've tried half a dozen things, and for some reason I can't get this right, UNLESS I use the trick described in https://stackoverflow.com/a/2158271. Specifically, I use the filter-branch option. His tutorial is far better than anything I could ever make, so just look there.
+
 # Maven
 
 For starters just a few snippets for Maven. The Maven documentation, as well as its community, drive me nuts. Either its over-specified or under-specified, and half the time I get holier-than-thou responses on why I shouldn't do what I want to do in the first place, rather than helping me solve the damn problem. So, here are some snippet solutions that'll just do what I want without wasting my time.
