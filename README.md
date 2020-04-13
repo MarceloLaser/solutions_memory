@@ -250,3 +250,15 @@ Apache Commons IO: Neat for file handling.
   <version>2.6</version>
 </dependency>
 ```
+
+# Github Package Registry
+
+## Setting up settings.xml
+
+https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages -> First part of this. settings.xml will be in maven_install_folder/conf. maven_install_folder is wherever you told it to be.
+
+## Upload single file with maven
+
+mvn deploy:deploy-file -DgroupId=GROUPID -DartifactId=ARTIFACTID -Dversion=VERSION -Dpackaging=jar -Dfile=RELATIVEFILEPATH -DrepositoryId=github -Durl=https://maven.pkg.github.com/USER/REPOSITORY
+
+Must have set "github" up as a repository ID in the master pom
